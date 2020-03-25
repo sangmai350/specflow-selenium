@@ -9,6 +9,7 @@ namespace BDD_Automation.Pages
         private By txtSrUsName => By.Id("searchByParamInput");
 
         private WebDriver driver;
+        Logging.Logger log = new Logging.Logger();
 
         public HomePage(WebDriver _driver)
         {
@@ -19,6 +20,7 @@ namespace BDD_Automation.Pages
         {
             try
             {
+                log.Info("Wait For Hamburger menu displayed");
                 driver.WaitForCondition(d => d.FindElement(hmbrgrMenu).Displayed, "Wait for Hamberger menu to appear");
             }
             catch

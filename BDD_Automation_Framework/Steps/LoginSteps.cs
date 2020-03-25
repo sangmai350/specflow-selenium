@@ -7,8 +7,6 @@ namespace BDD_Automation.Steps
     [Binding]
    public class LoginSteps : BaseSteps
     {
-
-
         private readonly WebDriver webDriver;
 
         public LoginSteps(WebDriver driver) : base(driver)
@@ -20,7 +18,6 @@ namespace BDD_Automation.Steps
         public void GivenIHaveNavigatedToTheApplication()
         {
             webDriver._driver.Navigate().GoToUrl(ConfigurationManager.AppSettings["URL"]);
-
         }
 
         [Given(@"I have typed username and password")]
@@ -32,7 +29,6 @@ namespace BDD_Automation.Steps
         [When(@"I click login button")]
         public void WhenIClickLoginButton()
         {
-            
             loginPage.ClickLogin();
         }
      
@@ -42,7 +38,5 @@ namespace BDD_Automation.Steps
         {
            homePage.VerifyHomePage();
         }
-     
-   
     }
 }
