@@ -145,8 +145,6 @@
     <Compile Include="Context\Assert.cs" />
     <Compile Include="Context\Log4net.cs" />
     <Compile Include="Context\Driver.cs" />
-    <Compile Include="Context\ExtentManager.cs" />
-    <Compile Include="Context\ExtentTestManager.cs" />
     <Compile Include="Context\RandomHelper.cs" />
     <Compile Include="Context\WebDriver.cs" />
     <Compile Include="Hooks\TestScenariosHooks.cs" />
