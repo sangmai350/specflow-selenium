@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace BDD_Automation_Framework.Features
+namespace BDD_Automation_Framework.Features.API
 {
     using TechTalk.SpecFlow;
     using System;
@@ -20,22 +20,22 @@ namespace BDD_Automation_Framework.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Login functionality")]
-    public partial class LoginFunctionalityFeature
+    [NUnit.Framework.DescriptionAttribute("GetUserByAPI")]
+    public partial class GetUserByAPIFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "Login.feature"
+#line 1 "GetUserByAPI.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Login functionality", "\tTest the Login functionality ", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/API", "GetUserByAPI", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -74,14 +74,14 @@ namespace BDD_Automation_Framework.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify if the login functionality is working")]
-        [NUnit.Framework.CategoryAttribute("regressiontest")]
-        public virtual void VerifyIfTheLoginFunctionalityIsWorking()
+        [NUnit.Framework.DescriptionAttribute("Get a User Information By API Via RestSharp and reqres.in")]
+        [NUnit.Framework.CategoryAttribute("apitest")]
+        public virtual void GetAUserInformationByAPIViaRestSharpAndReqres_In()
         {
             string[] tagsOfScenario = new string[] {
-                    "regressiontest"};
+                    "apitest"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify if the login functionality is working", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get a User Information By API Via RestSharp and reqres.in", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 5
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -103,16 +103,28 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 6
- testRunner.Given("I have navigated to the application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("Create Request \"/users/{id}\" with \"GET\" method", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 7
- testRunner.And("I have typed username and password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("Create URL segment for \"id\" with parameter 2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 8
- testRunner.When("I click login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("Execute API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                            "id",
+                            "email",
+                            "first_name",
+                            "last_name",
+                            "avatar"});
+                table1.AddRow(new string[] {
+                            "2",
+                            "janet.weaver@reqres.in",
+                            "Janet",
+                            "Weaver",
+                            "https://reqres.in/img/faces/2-image.jpg"});
 #line 9
- testRunner.Then("I should see the HomePage page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("The User should have the following values", ((string)(null)), table1, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

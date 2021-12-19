@@ -5,14 +5,14 @@ namespace BDD_Automation.Pages
 {
     public class LoginPage : BasePage
     {
-        private WebDriver driver;
+        private Context.WebDriver driver;
         private By txtUserName => By.Name("uid");
         private By txtPassword => By.Name("password");
         private By btnLogin => By.Name("btnLogin");
 
         //public LoginPage(Driver driver, Assert assert) : base(driver, assert) { }
 
-        public LoginPage(WebDriver _driver)
+        public LoginPage(Context.WebDriver _driver)
         {
             this.driver =_driver;
         }

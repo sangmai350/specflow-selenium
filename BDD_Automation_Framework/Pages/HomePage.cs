@@ -8,9 +8,9 @@ namespace BDD_Automation.Pages
         private By hmbrgrMenu => By.CssSelector("marquee.heading3");
         private By txtSrUsName => By.Id("searchByParamInput");
 
-        private WebDriver driver;
+        private Context.WebDriver driver;
 
-        public HomePage(WebDriver _driver)
+        public HomePage(Context.WebDriver _driver)
         {
             this.driver = _driver;
         }

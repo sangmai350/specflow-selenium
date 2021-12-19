@@ -25,12 +25,12 @@ namespace BDD_Automation.Hooks
     public sealed class TestScenariosHooks
     {
         
-        private readonly WebDriver webDriver;
+        private readonly Context.WebDriver webDriver;
         private static ExtentTest featureName;
         private static ExtentTest scenario;
         private static ExtentReports extent;
         private static string path;
-        public TestScenariosHooks(WebDriver driver)
+        public TestScenariosHooks(Context.WebDriver driver)
         {
            
             webDriver = driver;

@@ -371,6 +371,7 @@ namespace BDD_Automation.Context
         {
             return ngDriver.FindElements(NgBy.Repeater(name)).ElementAt(index).FindElement(locator);
         }
+
         public int GetRepeaterCount(string name)
         {
             return ngDriver.FindElements(NgBy.Repeater(name)).Count;
