@@ -9,6 +9,7 @@ namespace BDD_Automation.Pages
         private By txtUserName => By.Name("uid");
         private By txtPassword => By.Name("password");
         private By btnLogin => By.Name("btnLogin");
+        private By loginHeader => By.CssSelector(".user-login__tab");
 
         //public LoginPage(Driver driver, Assert assert) : base(driver, assert) { }
 
@@ -27,6 +28,18 @@ namespace BDD_Automation.Pages
         {         
            driver.FindElement(btnLogin).Click();
             return new HomePage(driver);
+        }
+
+        public void VerifyLoginPage()
+        {
+            try
+            {
+                driver.WaitForCondition(d => d.FindElement(loginHeader).Displayed, "Wait for Login tab to appear");
+            }
+            catch
+            {
+                Assert.Fail("Login Page was not loaded");
+            }
         }
     }
 }

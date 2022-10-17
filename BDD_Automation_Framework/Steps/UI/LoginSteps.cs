@@ -42,7 +42,13 @@ namespace BDD_Automation.Steps
         {
            homePage.VerifyHomePage();
         }
-     
-   
+
+        [Then(@"I should see the Login page")]
+        public void ThenIShouldSeeTheLoginPage()
+        {
+            loginPage.VerifyLoginPage();
+        }
+
+
     }
 }
